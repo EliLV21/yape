@@ -15,5 +15,17 @@
     "morgan": "^1.8.2",
     "morgan-json": "^1.1.0",
     "random-number": "0.0.7"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "gulp": "^3.9.1",
+    "gulp-obfuscate": "^0.2.9",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "level": "^1.7.0",
+    "morgan": "^1.8.2",
+    "random-number": "0.0.7",
+    "uglify": "^0.1.5"
   }
 }
