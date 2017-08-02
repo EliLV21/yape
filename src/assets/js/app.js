@@ -1,46 +1,41 @@
-$(document).ready(function(){
-      $('.carousel').carousel();
-});
-// $(".myCheckBox").checked(true);
-
-// $.post( 'http://localhost:3000/api/registerNumber', {
-// 	"phone": "+525525331406",
-// 	"terms": "true"
-// })
-// .then(function(response) {
-// 	console.log(response);
-// })
-// .catch(function(error) {
-// 	console.log(error);
-// });
-
 // ----INGRESAR NUMERO----
-
 var url = 'http://localhost:3000/api/registerNumber';
-var telephone = $("#telefono").val();
+function cargarPagina(){
+	$('.carousel').carousel();
+	$("#telefono").keyup(activarBoton);
+	$("#continuarCodigo").click(mandarCodigo);
+};
+var activarBoton = function(e){
+	var telephone = $("#telefono").val().length;
+	var botonActivo = $( "#test6" ).prop("checked");
+	if ( telephone === 10){
+		 $("#continuarCodigo").removeAttr("disabled");
 
-
-var enviarDatos = function(){
+	};
+};
+function mandarCodigo (e){
+	e.preventDefault();
+	var telefonoPersonal = $("#telefono").val();
+	// console.log(telefonoPersonal)
 	$.post( url , {
-		"phone": "+525525331406",
-		"terms": "true"
+		"phone": telefonoPersonal,
+		"terms": true
 	})
-	.then(function(response) {
-		console.log(response);
+	.then(function (response) {
+		var codigo = response.data.code;
+		alert("Tu codigo es: " + codigo);
+		location.href = "ingresaCodigo.html"
 	})
 	.catch(function(error) {
 		console.log(error);
 	});
 };
-
-/* $("#continuar").submit(function(e){
- 	e.preventDefault();
-
-});*/
-
-/*function validacionDatos(e, datos){
-	e.preventDefault();
-	var telefono = $("#telefono").val;
-	var terminos =
-
-};*/
+var validarCodigo = function(){
+	var codigoIngresado = $("#telefonoCodigo");
+	if(codigoIngresado === codigo){
+		alert("Gracias por registrarte");
+	}
+}
+$(document).ready(function(){
+	  cargarPagina();
+});

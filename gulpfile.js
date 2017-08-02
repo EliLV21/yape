@@ -4,7 +4,7 @@ const obfuscate = require("gulp-obfuscate");
 const sass = require("gulp-sass");
 
 const rutas = {
-	rutaSCSS: 'src/assets/scss/*.scss',
+	rutaCSS: 'src/assets/scss/*.css',
 	rutasJS: 'src/assets/js/*.js',
 	rutaImg: 'src/assets/img/*',
 	rutaViews: 'views/*.html',
@@ -28,7 +28,7 @@ gulp.task("imgs", function(){
 	.pipe(gulp.dest(rutas.rutaAssets + "/img"))
 });
 gulp.task("prepararSCSS", function(){
-	gulp.src(rutas.rutaSCSS)
+	gulp.src(rutas.rutaCSS)
 	.pipe(sass({
 		outputstyle: 'compressed',
 		precision: 3})
@@ -44,8 +44,7 @@ gulp.task('prepararJS', function(){
 });
 gulp.task("observar", function(){
 	gulp.watch('index.html',['assets']);
-	gulp.watch(rutas.rutaSCSS,['prepararSCSS']);
+	gulp.watch(rutas.rutaCSS,['prepararSCSS']);
 	gulp.watch(rutas.rutasJS,['prepararJS']);
 	gulp.watch(rutas.rutaViews,['views']);
-	gulp.watch(rutas.rutaNodeModules,['estilos']);
 });

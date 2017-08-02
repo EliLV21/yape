@@ -1,0 +1,39 @@
+body{
+	text-align: center;
+}
+.titulo{
+	font-size: 1.2rem;
+	color: #000;
+	font-weight: bold;
+}
+.subtitulo{
+	color: #8f8f8f;
+}
+img{
+	width: 60%;
+	padding: 15%;
+}
+.img-usuario{
+	margin-top: 5%;
+}
+.img-usuario__inicioSesion{
+	margin-top: 15%;
+	width: 80%;
+}
+/*.img-numero{
+	width: 50%;
+}*/
+#telefono::-webkit-input-placeholder::before{
+	padding-bottom: 0;
+	margin-bottom: 0;
+	width: 50%;
+	background-image: url(../assets/img/phoneandnumber.png);
+	background-repeat: no-repeat;
+    background-position: -48px 0px;
+}
+#inicioYape{
+	background-color: #fbd43b;
+}
+.fechaVencimiento{
+	display: inline-block;
+}
